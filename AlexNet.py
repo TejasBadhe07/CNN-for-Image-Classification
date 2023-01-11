@@ -26,7 +26,7 @@ def create_alexnet():
     model.add(layers.Dropout(0.5))
     model.add(layers.Dense(4096, activation='relu', kernel_initializer='he_normal'))
     model.add(layers.Dropout(0.5))
-    model.add(layers.Dense(3, activation='softmax'))
+    model.add(layers.Dense(len(CATEGORIES), activation='softmax'))
     return model
 
 model = create_alexnet()
