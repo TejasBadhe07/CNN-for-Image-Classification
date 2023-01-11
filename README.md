@@ -15,3 +15,12 @@ The code reads all the images from the given DATADIR path, divide the images int
 It will then resize the images and make a list of tuples where first element of tuple is the resized image and the second element of tuple is the label (number associated with the class of image)
 
 After creating the model and preprocessing the data, the script trains the model using the model.fit method, providing the training data and the validation data as input, along with the number of training epochs. Finally, the script evaluates the model on the validation data using the model.evaluate method and prints the loss and accuracy scores.
+
+
+This script in Prediction loads a trained model, which is named 'model_name' using tf.keras.models.load_model('model_name') and uses it to make predictions on a single image. The image path is passed to the script as the variable 'Image_path'.
+
+The preprocess_image function is used to read the image from the specified image path, resize it to the same fixed size (227x227), and convert it to a numpy array that can be used as input to the model. The function takes the image_path as the input and returns the preprocessed image.
+
+After preprocessing the image, it is passed through the model.predict function, which produces an array of predicted class probabilities for the image. The np.argmax function is used to find the index of the highest probability, which corresponds to the most likely predicted class. The index is then used to look up the corresponding class label from the CATEGORIES list.
+
+The Prediction script will print the predictions (class probabilities) and the predicted category of the image. 
