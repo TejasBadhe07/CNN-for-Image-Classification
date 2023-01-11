@@ -8,4 +8,10 @@ AlexNet is an incredibly powerful model capable of achieving high accuracies on 
 As a milestone in making deep learning more widely-applicable, AlexNet can also be credited with bringing deep learning to adjacent fields such as natural language processing and medical image analysis.
 
 
-This script creates an AlexNet model, which is a deep convolutional neural network architecture that was introduced in 2012. The architecture consists of several layers of convolutional, max pooling, and fully connected layers. The model is then trained on an image dataset using the Adam optimizer, with categorical cross-entropy as the loss function and accuracy as the evaluation metric. The script is preprocessing the image data before training, by loading the images, resizing them to a fixed size, shuffling them, and then splitting them into training and validation sets. The script is also one-hot encoding the labels before training the model on them. After training the model, the script will evaluate the model on the validation data
+The function create_alexnet is used to create an AlexNet model using the TensorFlow Keras library. The function defines the architecture of the model by adding several layers of convolutional, max pooling, and fully connected layers to the model in a sequential manner. The function also sets some hyperparameters for these layers such as the number of filters, kernel size, stride, padding, activation function, and kernel initialization method.
+
+The preprocess_data function is used to load the images from the dataset, resize them, and then divide them into training and validation sets.
+The code reads all the images from the given DATADIR path, divide the images into 3 classes i.e. 'category1', 'category2', 'category3'
+It will then resize the images and make a list of tuples where first element of tuple is the resized image and the second element of tuple is the label (number associated with the class of image)
+
+After creating the model and preprocessing the data, the script trains the model using the model.fit method, providing the training data and the validation data as input, along with the number of training epochs. Finally, the script evaluates the model on the validation data using the model.evaluate method and prints the loss and accuracy scores.
